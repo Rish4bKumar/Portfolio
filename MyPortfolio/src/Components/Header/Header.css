@@ -1,0 +1,336 @@
+#home {
+  position: relative;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.app__header {
+  flex: 1;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Remove the old header styles since they're now in Home.css */
+
+.head-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.p-text {
+  font-size: 1.1rem;
+  text-align: left;
+  color: var(--text-color);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.circle-cmp {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--text-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.circle-cmp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.web-developer-text {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+.web-dev-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color);
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.web-dev-title .text-primary {
+  color: var(--primary-color);
+  text-shadow: 0 0 20px var(--primary-color);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  }
+  to {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 1025px) {
+  .web-dev-title {
+    font-size: 3.5rem;
+  }
+  .web-developer-text {
+    order: 2;
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .web-dev-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .web-dev-title {
+    font-size: 2.2rem;
+  }
+  .web-developer-text {
+    margin: 1rem 0;
+  }
+}
+
+.creative {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@media (max-width: 1025px) {
+  .creative {
+    width: 100%;
+  }
+}
+
+.creative h1,
+.creative h2,
+.creative h3 {
+  position: absolute;
+  text-align: center;
+  font-size: 10vw;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 1025px) {
+  .creative h1,
+  .creative h2,
+  .creative h3 {
+    font-size: 14vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .creative h1,
+  .creative h2,
+  .creative h3 {
+    font-size: 20vw;
+  }
+}
+
+.creative img {
+  animation: float 4.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+  max-width: 50%;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.creative img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 1025px) {
+  .creative img {
+    width: 40%;
+  }
+}
+
+.creative .overflowHider {
+  overflow: hidden;
+  height: 0.7lh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__header-circles {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  height: 100%;
+  gap: 2rem;
+}
+
+@media (max-width: 1025px) {
+  .app__header-circles {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.app__header-circles div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--text-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.app__header-circles div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.app__header-circles div:hover::before {
+  left: 100%;
+}
+
+.app__header-circles div:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.app__header-circles div img {
+  width: 60%;
+  height: 60%;
+  transition: all 0.3s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.app__header-circles div:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 1025px) {
+  .app__header-circles div {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.app__header-circles div:nth-child(2) {
+  width: 145px;
+  height: 145px;
+  margin: 1.75rem;
+}
+
+@media (max-width: 1025px) {
+  .app__header-circles div:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+  }
+}
+
+.app__header-circles div:nth-child(3) {
+  width: 75px;
+  height: 75px;
+}
+
+@media (max-width: 1025px) {
+  .app__header-circles div:nth-child(3) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Enhanced animations and effects */
+.app__header-info .badge-cmp,
+.app__header-info .tag-cmp {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.app__header-circles div {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.app__header-circles div:nth-child(1) { animation-delay: 0.1s; }
+.app__header-circles div:nth-child(2) { animation-delay: 0.2s; }
+.app__header-circles div:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  
